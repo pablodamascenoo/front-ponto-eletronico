@@ -11,14 +11,10 @@ export default async function RootLayout({
   const session = await getSession();
 
   const response = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/users/" + session?.user.sub
+    process.env.NEXT_PUBLIC_API_URL + "/users/" + session?.user?.sub
   );
 
   let user = response.status === 200 ? ((await response.json()) as User) : null;
-
-  if (!session) {
-    return;
-  }
 
   return (
     <UserContextProvider>

@@ -71,7 +71,7 @@ export default function RegisterPage() {
       }
 
       setSuccess(true);
-      router.push("/");
+      window.location.href = "/";
     } catch (e) {
       setError(true);
       return;
@@ -86,6 +86,11 @@ export default function RegisterPage() {
 
   return (
     <main className="bg-primary-color flex min-h-screen flex-col items-center justify-center p-24 text-white">
+      <header className="h-10 w-full absolute top-0 flex justify-end px-10 border-b-tertiary-color border-b-2">
+        <a href="/api/auth/logout" className="p-2">
+          Sair
+        </a>
+      </header>
       {!secondPage ? (
         <>
           <div className="text-center space-y-4 my-10">

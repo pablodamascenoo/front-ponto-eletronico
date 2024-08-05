@@ -13,6 +13,7 @@ type Props = {
 };
 
 export default function HandleSession({ noSession, user, userStatus }: Props) {
+  console.log("teste");
   const { setUserJob, setUserTagId } = useContext(UserContext);
   const router = useRouter();
 
